@@ -8,12 +8,13 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ProjectsModule } from './projects/projects.module';
 import { SiteConfigModule } from './site-config/site-config.module';
+import { ProposalsModule } from './proposals/proposals.module';
 import { HealthController } from './health.controller';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://localhost:27017/portfolio'),
+    MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://localhost:27017/laura'),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
@@ -25,6 +26,7 @@ import { HealthController } from './health.controller';
     AuthModule,
     ProjectsModule,
     SiteConfigModule,
+    ProposalsModule,
   ],
   controllers: [HealthController],
 })

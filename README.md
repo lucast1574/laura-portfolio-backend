@@ -1,21 +1,21 @@
-# Laura Portfolio Backend
+# Portfolio Backend
 
-NestJS + GraphQL + MongoDB. Igual al backend del portfolio de Lucas — solo cambia el nombre del package, el dominio (`backend.santillan.pro`) y el SiteConfig por defecto (Laura, Data Engineer).
+NestJS + GraphQL + MongoDB. Sirve datos del portfolio de Lucas Santillan.
 
 ## Endpoints
 - `POST /graphql` — GraphQL API
-- `GET /health` — Health check
-- Playground en dev en `/graphql`
+- Playground en dev: `/graphql`
 
-## Variables
+## Variables de entorno
 Ver `.env.example`.
 
 ## Seed admin user
 ```bash
-SEED_USERNAME=laura SEED_PASSWORD='***' npm run seed
+SEED_USERNAME=lucas SEED_PASSWORD='xxxx' npm run seed
 ```
 
-O via mutation one-shot:
-```graphql
-mutation { bootstrapAdmin(username: "laura", password: "...", secret: "BOOTSTRAP_SECRET") }
+## Local
+```bash
+npm install
+npm run start:dev
 ```
